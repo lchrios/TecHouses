@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <meta charset="UTF-8">
+    <title>Data Capture</title>
+</head>
+<body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-firestore.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyAGukTQ7tkcYZbXibddzrkNjEzXvtcuWa4",
+        authDomain: "peermentortec.firebaseapp.com",
+        databaseURL: "https://peermentortec.firebaseio.com",
+        projectId: "peermentortec",
+        storageBucket: "peermentortec.appspot.com",
+        messagingSenderId: "28431201607",
+        appId: "1:28431201607:web:b8777ae05831f9d2f6c862",
+        measurementId: "G-C0D7NG00EQ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<div class="container left-align">
+    <form class="col left-align">
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Primer nombre</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix"></i>
+                        <input id="apellido" type="tel" class="validate">
+                        <label for="apellido">Apellido</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="password" type="text" class="validate">
+                        <label for="password">Constraseña</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix"></i>
+                        <input id="rePassword" type="tel" class="validate">
+                        <label for="rePassword">Confirme contraseña</label>
+                    </div>
+                <div class="row">
+                    <div class="row col s3">
+                        <div class="row input-field">
+                            <i class="material-icons prefix">contacts</i>
+                            <input id="matricula" type="text" class="validate">
+                            <label for="matricula">Matricula</label>
+                        </div>
+                        <div class="row">
+                            <div class="input-field">
+                                <i class="material-icons prefix">work</i>
+                                <input id="carrera" type="text" class="validate">
+                                <label for="carrera">Carrera</label>
+                            </div>
+                            <div class="input-field">
+                                <i class="material-icons prefix"></i>
+                                <input id="semestre" type="text" class="validate">
+                                <label for="semestre">Semestre</label>
+                            </div>
+                        </div>
+                        <div class="input-field row">
+                            <i class="material-icons prefix">email</i>
+                            <input id="correo" type="text" class="validate">
+                            <label for="correo">Correo electrónico</label>
+                        </div>
+                        <div class="input-field row">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="telephone" type="tel" class="validate">
+                            <label for="telephone">Telephone</label>
+                        </div>
+                    </div>
+                    <div class="input-field offset-s2 col s6">
+                        <div class="row">
+                            <i class="material-icons">house</i>
+                            <span>Escoge tu casa</span>
+                        </div>
+                        <div class="row">
+                            <form id="casa" action="#">
+                                <div class="col s4 left-align">
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio" checked />
+                                            <span>Revo</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio" />
+                                            <span>Elvilibro</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio"  />
+                                            <span>Krei</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio"/>
+                                            <span>Spirita</span>
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="col s2 left-align">
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio"/>
+                                            <span>Kresko</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio"/>
+                                            <span>Forta</span>
+                                        </label>
+                                    </p>
+                                    <p>
+                                        <label>
+                                            <input name="group1" type="radio"/>
+                                            <span>Reflekto</span>
+                                        </label>
+                                    </p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row center">
+        <input type="submit" id="btn" class="waves-effect waves-light btn-large" name="btn" value="creaPerfil"/>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
